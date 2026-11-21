@@ -1,0 +1,270 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "or": "or",
+    "back": "← Back",
+    "failed": "Failed",
+    "save": "Save"
+  },
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "loginWith42": "Login with 42",
+    "register": "Register",
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "processing": "Processing...",
+    "verifying": "Verifying...",
+    "alreadyHaveAccount": "Already have an account? Login",
+    "needAccount": "Need an account? Register",
+    "validation": {
+      "usernameTooShort": "Username must be at least 6 characters long.",
+      "passwordWeak": "Password does not meet all strength requirements.",
+      "passwordsMismatch": "Passwords do not match.",
+      "required8Chars": "8+ characters",
+      "password8Chars": "8+ characters",
+      "requiredUppercase": "Uppercase (A-Z)",
+      "passwordUppercase": "Uppercase (A-Z)",
+      "requiredLowercase": "Lowercase (a-z)",
+      "passwordLowercase": "Lowercase (a-z)",
+      "requiredDigit": "Digit (0-9)",
+      "passwordDigit": "Digit (0-9)",
+      "requiredSpecialChar": "Special char (!@#…)",
+      "passwordSpecial": "Special char (!@#…)",
+      "username6Chars": "6+ characters",
+      "passwordsMatch": "Passwords match"
+    },
+    "2fa": {
+      "title": "Two-Factor Authentication",
+      "description": "A verification code has been sent to your email. Please enter it below.",
+      "codePlaceholder": "Enter 6-digit code",
+      "verifyCode": "Verify Code",
+      "backToLogin": "← Back to login"
+    },
+    "messages": {
+      "registerSuccess": "Registration successful! Check your email then login.",
+      "error": "An error occurred",
+      "profileSaved": "Profile saved!",
+      "passwordUpdated": "Password updated successfully"
+    },
+    "errors": {
+      "imageTooLarge": "Image must be under 500KB",
+      "failedToSave": "Failed to save",
+      "registrationFailed": "Registration failed",
+      "loginFailed": "Login failed",
+      "noTokenReceived": "No token received",
+      "twoFaFailed": "2FA verification failed",
+      "invalidCredentials": "Invalid credentials",
+      "userNotFound": "User not found",
+      "emailAlreadyVerified": "Email already verified",
+      "emailVerifiedSuccessfully": "Email verified successfully",
+      "userExists": "Email or Username already exists",
+      "invalidToken": "Invalid token",
+      "linkExpired": "Link expired",
+      "twoFaExpired": "No valid 2FA code found or code expired",
+      "invalidTwoFa": "Invalid 2FA code",
+      "usernameTaken": "Username already taken",
+      "currentPasswordIncorrect": "Current password is incorrect"
+    },
+    "editProfile": "Edit Profile",
+    "clickToChangeAvatar": "Click to change avatar",
+    "displayName": "Display Name",
+    "optional": "Optional",
+    "saveProfile": "Save Profile",
+    "saving": "Saving...",
+    "changePassword": "Change Password",
+    "currentPassword": "Current Password",
+    "newPassword": "New Password"
+  },
+  "dashboard": {
+    "status": "Status",
+    "connected": "Connected",
+    "disconnected": "Disconnected",
+    "latency": "Latency",
+    "mode": "Mode",
+    "freeMode": "Free Exploration",
+    "guidedMode": "Guided Exploration",
+    "switchMode": "Switch Mode",
+    "creative": "Creative Mode",
+    "startTour": "Start Tour",
+    "activity": "Activity",
+    "friends": "Friends",
+    "online": "online",
+    "offline": "offline",
+    "artworks": "Artworks",
+    "memberSince": "Member since",
+    "noFriends": "No friends yet"
+  },
+  "connection": {
+    "loading": "Loading...",
+    "synchronizing": "Synchronizing Cosmos data..."
+  },
+  "art": {
+    "notEnoughContent": "Fill at least 10% of the canvas before sharing.",
+    "captureFailed": "Failed to capture artwork",
+    "nameRequired": "Please enter an artwork name",
+    "brushSize": "px",
+    "namePlaceholder": "Name your artwork there",
+    "reset": "RESET",
+    "resetTitle": "Reset canvas",
+    "selectColor": "Select color {color}",
+    "confirm": "Confirm",
+    "share": "Share"
+  },
+  "sanctuary": {
+    "title": "THE SANCTUARY",
+    "quote": "\"Here, nothing is evaluated. Something is simply left.\"",
+    "essence": {
+      "title": "The essence",
+      "description1": "Transcendence is not a game. It is an experimental digital space where players explore the cosmos—a vast network of creative artifacts created by a collective.",
+      "description2": "It is a place for expression without evaluation. For exploration without competition. For creation without judgment.\n\nThis is where your imagination takes form."
+    },
+    "die": {
+      "title": "The Die",
+      "description": "At the heart of Transcendence lies the Die—a 3D digital object that represents possibility, chance, and creative potential.\n\nThe Die evolves as you interact with it. Each artistic contribution adds new dimensions to its existence. Each exploration leaves a trace. Each creation shapes its evolution.",
+      "philosophy": "Every choice adds a dimension. Every creation resonates."
+    },
+    "states": {
+      "title": "The three states",
+      "dormant": {
+        "title": "Dormant — observation",
+        "description": "In its dormant state, the Die awaits. You observe. You explore. You understand the cosmos without leaving your mark.\n\nThis is pure observation. The foundation of all creation."
+      },
+      "active": {
+        "title": "Active — exploration",
+        "description": "The Active state is where exploration becomes intentional. You navigate through the stars, discovering artworks created by others.\n\nYou unlock the Die's potential through participation. Each discovery is a key. Each exploration is a journey."
+      },
+      "creative": {
+        "title": "Creative — co-creation",
+        "description": "In Creative mode, you become a co-creator. You paint, you imagine, you shape the Die's future.\n\nYour artwork becomes part of the cosmos. Your creation influences others. Together, we build something transcendent."
+      }
+    },
+    "stars": {
+      "title": "The stars",
+      "description1": "The cosmos is made of stars—each one a unique artwork. Each star has its own history, its own resonance.",
+      "description2": "Stars can be explored, discovered, and collected. They form constellations. They create meaning through connection.",
+      "description3": "You are both a star and a explorer. Your creations shine. Your journey illuminates the path for others."
+    },
+    "blockchain": {
+      "title": "Blockchain — durable memory",
+      "description": "Every artwork you create is recorded on the blockchain—ensuring permanent memory and true ownership.",
+      "philosophy": "Your creations are yours. Immutable. Permanent. Beyond any central authority.\n\nTranscendence leverages blockchain to guarantee the permanence of collective creation."
+    },
+    "whatNotIs": {
+      "title": "What this is not",
+      "notGame": "It is not a game",
+      "notSocialNetwork": "It is not a social network",
+      "notGallery": "It is not a competitive gallery",
+      "notDemo": "It is not a technological demonstration",
+      "place": "It is a place."
+    },
+    "legalNav": "LEGAL",
+    "aboutNav": "ABOUT",
+    "transcendenceTitle": "TRANSCENDENCE"
+  },
+  "legal": {
+    "title": "Terms and conditions",
+    "terms": {
+      "title": "Terms of service",
+      "acceptance": {
+        "title": "1. Acceptance of terms",
+        "description": "By accessing and using Transcendence, you accept and agree to be bound by the terms and provision of this agreement."
+      },
+      "nature": {
+        "title": "2. Nature of the service",
+        "description": "Transcendence is an experimental digital space for creative exploration and expression. The service is provided as-is without warranties."
+      },
+      "creation": {
+        "title": "3. User responsibilities",
+        "description": "Users agree not to create, upload, or share content that is illegal, harmful, hateful, or violates others' rights."
+      },
+      "blockchain": {
+        "title": "4. Blockchain persistence",
+        "description": "All artworks are permanently stored on the blockchain. This ensures your creations cannot be censored or removed."
+      },
+      "irreversibility": {
+        "title": "5. Irreversibility",
+        "description": "Blockchain transactions are permanent and irreversible. Users must understand the implications before creating."
+      },
+      "account": {
+        "title": "6. Account responsibility",
+        "description": "You are responsible for maintaining the confidentiality of your account credentials. You are liable for all activities under your account."
+      },
+      "behavior": {
+        "title": "7. User conduct",
+        "description": "Users must behave respectfully. Harassment, abuse, or violations of others' rights may result in account suspension."
+      }
+    },
+    "privacy": {
+      "title": "Privacy policy",
+      "dataCollected": {
+        "title": "1. Data collected",
+        "description": "We collect minimal data: username, email, and artwork metadata necessary for the service to function."
+      },
+      "dataUse": {
+        "title": "2. Data use",
+        "description": "Your data is used only to provide the service, improve functionality, and maintain security."
+      },
+      "ai": {
+        "title": "3. AI processing",
+        "description": "Some features use AI to enhance your experience. AI processes your inputs but does not store them for training purposes."
+      },
+      "security": {
+        "title": "4. Security",
+        "description": "We implement industry-standard security measures to protect your data. However, no system is completely secure."
+      }
+    },
+    "cookies": {
+      "title": "Cookie policy",
+      "description1": "Transcendence uses cookies to enhance user experience and maintain session information.",
+      "description2": "You can control cookie preferences through your browser settings."
+    },
+    "ip": {
+      "title": "Intellectual property",
+      "description": "All content created on Transcendence is owned by the creator. By uploading content, you grant Transcendence a license to display and preserve your work."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "For questions or concerns, please contact us at",
+      "email": "contact@transcendence.42"
+    },
+    "lastUpdated": "Last updated: April 2026"
+  },
+  "friends": {
+    "inviteWithCode": "Invite a friend with a code",
+    "generateInviteCode": "Generate Invite Code",
+    "yourCode": "Your code (click to copy)",
+    "orAddFriend": "OR ADD A FRIEND",
+    "enterCode": "Enter code",
+    "addFriend": "Add Friend",
+    "friendshipAccepted": "Friendship accepted!",
+    "codeGenerated": "Code generated & copied!",
+    "codeCopied": "Code copied!",
+    "friendAdded": "Friend added successfully",
+    "friendRemoved": "Friend removed successfully",
+    "errors": {
+      "inviteNotFound": "Invite not found",
+      "inviteUsed": "Invite has already been used",
+      "inviteExpired": "Invite has expired",
+      "cannotAcceptOwn": "You cannot accept your own invite",
+      "userNotFound": "Your user account was not found",
+      "senderNotFound": "Invite sender no longer exists",
+      "alreadyFriends": "You are already friends with this user",
+      "notFriends": "You are not friends with this user",
+      "friendUserNotFound": "User not found"
+    }
+  },
+  "calendar": {
+    "weekdays": ["M", "T", "W", "T", "F", "S", "S"]
+  },
+  "language": {
+    "en": "EN",
+    "fr": "FR",
+    "de": "DE",
+    "selectLanguage": "Language"
+  }
+}

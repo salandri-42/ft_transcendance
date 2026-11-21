@@ -1,0 +1,68 @@
+// ===========================================================
+// Cosmos Prisma Schema
+// Base de données dédiée : cosmos_db
+// Stocke les étoiles de la galaxie et les artworks (dessins)
+// générés par les utilisateurs sur le canvas frontend.
+// ===========================================================
+
+generator client {
+	provider      = "prisma-client-js"
+	binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+	provider = "postgresql"
+	url      = env("DATABASE_URL")
+}
+
+// -------------------------------------------------------
+// Star : une étoile dans la galaxie, peut contenir
+//        plusieurs artworks d'utilisateurs différents.
+// -------------------------------------------------------
+model Star {
+	id        String   @id @default(uuid())
+	name      String?
+	x         Float
+	y         Float
+	z         Float
+	ownerId   String?
+	emotion        String?
+	contextEmotion Json?
+	createdAt      DateTime @default(now())
+	updatedAt      DateTime @updatedAt
+
+	artworks  Artwork[]
+
+	@@index([ownerId])
+}
+
+// -------------------------------------------------------
+// Artwork : un dessin réalisé par un utilisateur sur le
+//           canvas frontend, exporté en JPG puis stocké
+//           en binaire (Bytes) dans la base.
+// -------------------------------------------------------
+model Artwork {
+	id        String   @id @default(uuid())
+	title     String?
+	type      String   @default("drawing")
+	mimeType  String   @default("image/jpeg")
+	imageData Bytes
+	imageSize Int
+	data      Json
+	ownerId   String
+
+	starId    String
+	star      Star     @relation(fields: [starId], references: [id], onDelete: Cascade)
+
+	// Blockchain (NFT) — mis à jour par Scribe via Redis
+	isMinted  Boolean  @default(false)
+	tokenId   Int?
+	txHash    String?
+	tokenURI  String?
+
+	createdAt DateTime @default(now())
+	updatedAt DateTime @updatedAt
+
+	@@index([ownerId])
+	@@index([starId])
+}

@@ -1,0 +1,87 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum FriendshipStatus {
+	PENDING
+	ACCEPTED
+}
+
+model User {
+	id        String    @id @default(uuid())
+	email     String    @unique
+	username  String    @unique
+	password  String?
+	displayName String?
+	avatarUrl String?
+	ftId      String?   @unique
+	createdAt DateTime  @default(now())
+	updatedAt DateTime  @updatedAt
+	isOnline  Boolean   @default(false)
+	sessions  Session[]
+	twoFaOn		Boolean @default(true)
+	twoFaCode	String?
+	twoFaTime	DateTime?
+	isEmailVerified             Boolean   @default(false)
+	emailToken      String?   @unique
+	emailTokenExpiry DateTime?
+
+	// Friend system
+	sentFriendships     Friendship[] @relation("FriendshipRequester")
+	receivedFriendships Friendship[] @relation("FriendshipAddressee")
+	sentInvites         FriendInvite[] @relation("InviteSender")
+}
+
+// Friendship between two users (bidirectional via two rows once accepted)
+model Friendship {
+	id          String           @id @default(uuid())
+	requesterId String
+	addresseeId String
+	status      FriendshipStatus @default(PENDING)
+	createdAt   DateTime         @default(now())
+	updatedAt   DateTime         @updatedAt
+
+	requester   User @relation("FriendshipRequester", fields: [requesterId], references: [id], onDelete: Cascade)
+	addressee   User @relation("FriendshipAddressee", fields: [addresseeId], references: [id], onDelete: Cascade)
+
+	// A pair (A→B) can only have one friendship record
+	@@unique([requesterId, addresseeId])
+	@@index([requesterId])
+	@@index([addresseeId])
+}
+
+// One-time invite token sent by a user to invite someone
+model FriendInvite {
+	id        String   @id @default(uuid())
+	token     String   @unique @default(uuid())
+	senderId  String
+	usedAt    DateTime?
+	expiresAt DateTime
+	createdAt DateTime @default(now())
+
+	sender    User @relation("InviteSender", fields: [senderId], references: [id], onDelete: Cascade)
+
+	@@index([senderId])
+}
+
+model Session {
+  id           String   @id @default(uuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  refreshToken String   @unique
+  userAgent    String?
+  ipAddress    String?
+  expiresAt    DateTime
+  createdAt    DateTime @default(now())
+
+  @@index([userId])
+}

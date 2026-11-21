@@ -1,0 +1,15 @@
+server.name: kibana
+server.host: "0.0.0.0"
+server.basePath: /elk
+server.rewriteBasePath: true
+server.ssl.enabled: true
+server.ssl.certificate: /usr/share/kibana/config/certs/elk.crt
+server.ssl.key: /usr/share/kibana/config/certs/elk.key
+elasticsearch.hosts:
+  - https://elasticsearch:9200
+elasticsearch.ssl.certificateAuthorities:
+  - /usr/share/kibana/config/certs/ca.crt
+elasticsearch.username: ${ELASTICSEARCH_USERNAME}
+elasticsearch.password: ${ELASTICSEARCH_PASSWORD}
+monitoring.ui.container.elasticsearch.enabled: true
+xpack.security.enabled: true

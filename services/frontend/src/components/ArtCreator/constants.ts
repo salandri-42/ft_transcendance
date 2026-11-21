@@ -1,0 +1,12 @@
+export const CANVAS_SIZE = 600;
+export const TRAIL_COUNT = 100;
+export const MIN_THICKNESS = 2;
+export const MAX_THICKNESS = 60;
+export const DEFAULT_THICKNESS = 16;
+export const STROKE_SPRING = 0.05;
+export const STROKE_FRICTION = 0.85;
+export const STROKE_ALPHA = 0.85;
+export const THICKNESS_STEP = 2;
+export const MIN_COLORED_PERCENT = 10;
+export const BACKGROUND_RGB = 245;
+export const COLOR_DELTA_THRESHOLD = 16;

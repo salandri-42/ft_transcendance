@@ -1,0 +1,270 @@
+{
+  "common": {
+    "loading": "טוען...",
+    "error": "שגיאה",
+    "success": "הצלחה",
+    "or": "או",
+    "back": "← חזור",
+    "failed": "נכשל",
+    "save": "שמור"
+  },
+  "auth": {
+    "login": "התחבר",
+    "logout": "התנתק",
+    "loginWith42": "התחבר עם 42",
+    "register": "הרשמה",
+    "username": "שם משתמש",
+    "email": "דוא\"ל",
+    "password": "סיסמה",
+    "confirmPassword": "אמת סיסמה",
+    "processing": "מעבד...",
+    "verifying": "מאמת...",
+    "alreadyHaveAccount": "כבר יש לך חשבון? התחבר",
+    "needAccount": "צריך חשבון? הירשם",
+    "validation": {
+      "usernameTooShort": "שם המשתמש חייב להכיל לפחות 6 תווים.",
+      "passwordWeak": "הסיסמה אינה עומדת בכל דרישות החוזק.",
+      "passwordsMismatch": "הסיסמאות אינן תואמות.",
+      "required8Chars": "8+ תווים",
+      "password8Chars": "8+ תווים",
+      "requiredUppercase": "אות גדולה (A-Z)",
+      "passwordUppercase": "אות גדולה (A-Z)",
+      "requiredLowercase": "אות קטנה (a-z)",
+      "passwordLowercase": "אות קטנה (a-z)",
+      "requiredDigit": "ספרה (0-9)",
+      "passwordDigit": "ספרה (0-9)",
+      "requiredSpecialChar": "תו מיוחד (!@#…)",
+      "passwordSpecial": "תו מיוחד (!@#…)",
+      "username6Chars": "6+ תווים",
+      "passwordsMatch": "הסיסמאות תואמות"
+    },
+    "2fa": {
+      "title": "אימות דו-שלבי",
+      "description": "נשלח קוד אימות לכתובת הדוא\"ל שלך. אנא הזן אותו למטה.",
+      "codePlaceholder": "הזן קוד בן 6 ספרות",
+      "verifyCode": "אמת קוד",
+      "backToLogin": "← חזרה למסך התחברות"
+    },
+    "messages": {
+      "registerSuccess": "הרשמה הצליחה! בדוק את הדוא\"ל שלך ואז התחבר.",
+      "error": "אירעה שגיאה",
+      "profileSaved": "הפרופיל נשמר!",
+      "passwordUpdated": "הסיסמה עודכנה בהצלחה"
+    },
+    "errors": {
+      "imageTooLarge": "התמונה חייבת להיות פחות מ-500KB",
+      "failedToSave": "שמירה נכשלה",
+      "registrationFailed": "הרשמה נכשלה",
+      "loginFailed": "התחברות נכשלה",
+      "noTokenReceived": "לא התקבל אסימון (Token)",
+      "twoFaFailed": "אימות דו-שלבי נכשל",
+      "invalidCredentials": "פרטי התחברות שגויים",
+      "userNotFound": "משתמש לא נמצא",
+      "emailAlreadyVerified": "הדוא\"ל כבר מאומת",
+      "emailVerifiedSuccessfully": "הדוא\"ל אומת בהצלחה",
+      "userExists": "דוא\"ל או שם משתמש כבר קיימים",
+      "invalidToken": "אסימון לא תקף",
+      "linkExpired": "הקישור פג תוקף",
+      "twoFaExpired": "לא נמצא קוד אימות בתוקף או שהקוד פג תוקף",
+      "invalidTwoFa": "קוד אימות לא תקף",
+      "usernameTaken": "שם המשתמש כבר תפוס",
+      "currentPasswordIncorrect": "הסיסמה הנוכחית שגויה"
+    },
+    "editProfile": "ערוך פרופיל",
+    "clickToChangeAvatar": "לחץ כדי לשנות תמונה",
+    "displayName": "שם תצוגה",
+    "optional": "אופציונלי",
+    "saveProfile": "שמור פרופיל",
+    "saving": "שומר...",
+    "changePassword": "שנה סיסמה",
+    "currentPassword": "סיסמה נוכחית",
+    "newPassword": "סיסמה חדשה"
+  },
+  "dashboard": {
+    "status": "סטטוס",
+    "connected": "מחובר",
+    "disconnected": "מנותק",
+    "latency": "השהייה",
+    "mode": "מצב",
+    "freeMode": "חקירה חופשית",
+    "guidedMode": "חקירה מודרכת",
+    "switchMode": "החלף מצב",
+    "creative": "מצב יצירתי",
+    "startTour": "התחל סיור",
+    "activity": "פעילות",
+    "friends": "חברים",
+    "online": "מחובר",
+    "offline": "ניתק",
+    "artworks": "יצירות אמנות",
+    "memberSince": "חבר מאז",
+    "noFriends": "אין חברים עדיין"
+  },
+  "connection": {
+    "loading": "טוען...",
+    "synchronizing": "מסנכרן נתוני Cosmos..."
+  },
+  "art": {
+    "notEnoughContent": "מלא לפחות 10% מהקנבס לפני השיתוף.",
+    "captureFailed": "נכשל בלכידת היצירה",
+    "brushSize": "פיקסלים",
+    "namePlaceholder": "תן שם ליצירה שלך כאן",
+    "reset": "אפס",
+    "resetTitle": "אפס קנבס",
+    "selectColor": "בחר צבע {color}",
+    "confirm": "אשר",
+    "share": "שתף"
+  },
+  "sanctuary": {
+    "title": "מקום המפלט",
+    "quote": "\"כאן, שום דבר אינו מוערך. משהו פשוט מושאר.\"",
+    "essence": {
+      "title": "המהות",
+      "description1": "Transcendence אינו משחק. הוא מרחב דיגיטלי ניסיוני שבו שחקנים חוקרים את הקוסמוס - רשת רחבה של יצירות שנוצרו על ידי קולקטיב.",
+      "description2": "זהו מקום להבעה ללא הערכה. לחקירה ללא תחרות. ליצירה ללא שיפוט.\n\nכאן הדמיון שלך לובש צורה."
+    },
+    "die": {
+      "title": "הקובייה (The Die)",
+      "description": "במרכז Transcendence שוכנת הקובייה - אובייקט דיגיטלי תלת-ממדי המייצג אפשרות, סיכוי ופוטנציאל יצירתי.\n\nהקובייה מתפתחת בזמן שאתה מתקשר איתה. כל תרומה אמנותית מוסיפה לה ממדים חדשים. כל חקירה משאירה חותם.",
+      "philosophy": "כל בחירה מוסיפה ממד. כל יצירה מהדהדת."
+    },
+    "states": {
+      "title": "שלושת המצבים",
+      "dormant": {
+        "title": "רדום — התבוננות",
+        "description": "במצבה הרדום, הקובייה ממתינה. אתה מתבונן. אתה חוקר. אתה מבין את הקוסמוס מבלי להשאיר את חותמך.\n\nזוהי התבוננות טהורה. הבסיס לכל יצירה."
+      },
+      "active": {
+        "title": "פעיל — חקירה",
+        "description": "המצב הפעיל הוא המקום שבו החקירה הופכת למכוונת. אתה מנווט בין כוכבים, ומגלה יצירות אמנות שנוצרו על ידי אחרים.\n\nאתה פותח את הפוטנציאל של הקובייה דרך השתתפות."
+      },
+      "creative": {
+        "title": "יצירתי — יצירה משותפת",
+        "description": "במצב יצירתי, אתה הופך ליוצר-שותף. אתה מצייר, אתה מדמיין, אתה מעצב את עתיד הקובייה.\n\nתרומתך הופכת לחלק מהקוסמוס."
+      }
+    },
+    "stars": {
+      "title": "הכוכבים",
+      "description1": "הקוסמוס מורכב מכוכבים - כל אחד הוא יצירת אמנות ייחודית.",
+      "description2": "ניתן לחקור, לגלות ולאסוף כוכבים.",
+      "description3": "אתה גם כוכב וגם חוקר. היצירות שלך מאירות."
+    },
+    "blockchain": {
+      "title": "בלוקצ'יין — זיכרון עמיד",
+      "description": "כל יצירה שאתה יוצר נרשמת בבלוקצ'יין - מה שמבטיח זיכרון קבוע ובעלות אמיתית.",
+      "philosophy": "היצירות שלך הן שלך. בלתי ניתנות לשינוי."
+    },
+    "whatNotIs": {
+      "title": "מה שזה לא",
+      "notGame": "זה לא משחק",
+      "notSocialNetwork": "זה לא רשת חברתית",
+      "notGallery": "זה לא גלריה תחרותית",
+      "notDemo": "זה לא הדגמה טכנולוגית",
+      "place": "זהו מקום."
+    },
+    "legalNav": "תנאי שימוש",
+    "aboutNav": "אודות",
+    "transcendenceTitle": "TRANSCENDENCE"
+  },
+  "legal": {
+    "title": "תנאים והגבלות",
+    "terms": {
+      "title": "תנאי שירות",
+      "acceptance": {
+        "title": "1. מתן הסכמה לתנאים",
+        "description": "על ידי גישה ושימוש ב-Transcendence, אתה מסכים להיות מחויב לתנאים של הסכם זה."
+      },
+      "nature": {
+        "title": "2. מהות השירות",
+        "description": "Transcendence הוא מרחב דיגיטלי ניסיוני לחקירה והבעה יצירתית."
+      },
+      "creation": {
+        "title": "3. אחריות המשתמש",
+        "description": "המשתמשים מסכימים לא ליצור, להעלות או לשתף תוכן שהוא לא חוקי, מזיק, שטוף שנאה או מפר את זכויותיהם של אחרים."
+      },
+      "blockchain": {
+        "title": "4. התמדת בלוקצ'יין",
+        "description": "כל יצירות האמנות נשמרות לצמיתות בבלוקצ'יין."
+      },
+      "irreversibility": {
+        "title": "5. בלתי הפיך",
+        "description": "עסקאות בלוקצ'יין הן קבועות ובלתי הפיכות."
+      },
+      "account": {
+        "title": "6. אחריות על החשבון",
+        "description": "אתה אחראי לשמירת סודיות פרטי החשבון שלך."
+      },
+      "behavior": {
+        "title": "7. התנהגות משתמשים",
+        "description": "המשתמשים חייבים להתנהג בכבוד."
+      }
+    },
+    "privacy": {
+      "title": "מדיניות פרטיות",
+      "dataCollected": {
+        "title": "1. נתונים שנאספו",
+        "description": "אנו אוספים נתונים מינימליים הקשורים ליצירות האמנות שלך כדי לספק את השירות."
+      },
+      "dataUse": {
+        "title": "2. שימוש בנתונים",
+        "description": "הנתונים שלך משמשים רק לאספקת השירות ולשיפור הפונקציונליות."
+      },
+      "ai": {
+        "title": "3. עיבוד AI",
+        "description": "קיימות תכונות המשתמשות בבינה מלאכותית (AI) כדי להעצים את חווית השימוש שלך."
+      },
+      "security": {
+        "title": "4. אבטחה",
+        "description": "אנו עובדים תחת אמצעי אבטחה מחמירים בהתאם לתקן התעשייה."
+      }
+    },
+    "cookies": {
+      "title": "מדיניות עוגיות",
+      "description1": "Transcendence משתמש בקבצי Cookie כדי לשפר את חווית המשתמש.",
+      "description2": "ניתן לשלוט בהעדפות באמצעות הגדרות הדפדפן."
+    },
+    "ip": {
+      "title": "קניין רוחני",
+      "description": "כל התוכן שנוצר ב-Transcendence שייך ליוצר."
+    },
+    "contact": {
+      "title": "צור קשר",
+      "description": "לשאלות ובירורים כלליים, צור עמנו קשר בכתובת",
+      "email": "contact@transcendence.42"
+    },
+    "lastUpdated": "עודכן לאחרונה: פברואר 2026"
+  },
+  "friends": {
+    "inviteWithCode": "הזמן חבר באמצעות קוד",
+    "generateInviteCode": "צור קוד הזמנה",
+    "yourCode": "הקוד שלך (לחץ להעתקה)",
+    "orAddFriend": "או הוסף חבר",
+    "enterCode": "הזן קוד",
+    "addFriend": "הוסף חבר",
+    "friendshipAccepted": "חברות אושרה!",
+    "codeGenerated": "קוד נוצר והועתק!",
+    "codeCopied": "הקוד הועתק!",
+    "friendAdded": "החבר נוסף בהצלחה",
+    "friendRemoved": "החבר הוסר בהצלחה",
+    "errors": {
+      "inviteNotFound": "ההזמנה לא נמצאה",
+      "inviteUsed": "ההזמנה כבר נוצלה",
+      "inviteExpired": "פג תוקף ההזמנה",
+      "cannotAcceptOwn": "אינך יכול לאשר את ההזמנה של עצמך",
+      "userNotFound": "חשבון המשתמש שלך לא נמצא",
+      "senderNotFound": "שולח ההזמנה אינו קיים עוד",
+      "alreadyFriends": "אתם כבר חברים",
+      "notFriends": "אינך חבר של משתמש זה",
+      "friendUserNotFound": "משתמש לא נמצא"
+    }
+  },
+  "calendar": {
+    "weekdays": ["א'", "ב'", "ג'", "ד'", "ה'", "ו'", "ש'"]
+  },
+  "language": {
+    "en": "EN",
+    "fr": "FR",
+    "de": "DE",
+    "he": "HE",
+    "selectLanguage": "שפה"
+  }
+}

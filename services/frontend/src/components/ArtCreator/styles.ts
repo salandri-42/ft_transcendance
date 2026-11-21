@@ -1,0 +1,118 @@
+import type React from 'react';
+
+import { CANVAS_SIZE } from './constants';
+
+export const styles: Record<string, React.CSSProperties> = {
+	backdrop: {
+		position: 'absolute',
+		inset: 0,
+		display: 'flex',
+		justifyContent: 'center',
+		alignItems: 'center',
+		zIndex: 99,
+	},
+	controls: {
+		display: 'flex',
+		width: CANVAS_SIZE,
+		justifyContent: 'space-between',
+		alignItems: 'center',
+		padding: '6px 10px',
+		boxSizing: 'border-box',
+		border: '1px solid rgba(255, 255, 255, 0.12)',
+		background: 'rgba(255, 255, 255, 0.06)',
+		backdropFilter: 'blur(12px)',
+		WebkitBackdropFilter: 'blur(12px)',
+		borderRadius: 12,
+	},
+	card: {
+		position: 'relative',
+		display: 'flex',
+		flexDirection: 'column',
+		gap: 8,
+	},
+	topCard: {
+		width: CANVAS_SIZE,
+		boxSizing: 'border-box',
+		display: 'flex',
+		padding: '6px 10px',
+		border: '1px solid rgba(255, 255, 255, 0.12)',
+		background: 'rgba(255, 255, 255, 0.06)',
+		backdropFilter: 'blur(12px)',
+		WebkitBackdropFilter: 'blur(12px)',
+		borderRadius: 12,
+	},
+	topCardRow: {
+		display: 'flex',
+		width: '100%',
+		alignItems: 'center',
+		gap: 8,
+	},
+	palette: {
+		display: 'flex',
+		gap: 8,
+		alignItems: 'center',
+	},
+	swatch: {
+		width: 22,
+		height: 22,
+		borderRadius: 0,
+		border: '2px solid transparent',
+		cursor: 'pointer',
+		padding: 0,
+	},
+	canvasWrapper: {
+		position: 'relative',
+		width: CANVAS_SIZE,
+		height: CANVAS_SIZE,
+	},
+	resetBtn: {
+		fontSize: 14,
+		lineHeight: 1,
+		cursor: 'pointer',
+		background: 'transparent',
+		border : 'none',
+		color: '#fff',
+	},
+	brushIndicator: {
+		display: 'flex',
+		alignItems: 'center',
+		gap: 6,
+	},
+	brushLabel: {
+		fontSize: 10,
+		fontFamily: 'monospace',
+		color: '#ffffff',
+		userSelect: 'none',
+	},
+	shareBtn: {
+		padding: '8px 18px',
+		background: 'transparent',
+		fontSize: 14,
+		cursor: 'pointer',
+		display: 'flex',
+		alignItems: 'center',
+		color: 'rgba(255, 255, 255, 0.95)',
+		border: '1px solid #ffffff88',
+		textTransform: 'uppercase',
+	},
+	shareActions: {
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'flex-end',
+		gap: 4,
+	},
+	errorContainer: {
+		flex: '1 1 auto',
+		minWidth: 0,
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center',
+	},
+	shareError: {
+		boxSizing: 'border-box',
+		display: 'block',
+		lineHeight: 1.1,
+		fontSize: 13,
+		color: 'red'
+	},
+};

@@ -1,0 +1,286 @@
+x-logging: &logging
+  driver: syslog
+  options:
+    syslog-address: "udp://127.0.0.1:5514"
+    syslog-format: "rfc5424micro"
+    tag: "{{.Name}}"
+
+services:
+
+  # --- INFRA ---
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+      - "8443:443"
+    networks:
+      - public_net
+      - internal_net
+    logging: *logging
+
+  postgres:
+    image: postgres:dev
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./infra/postgres/init-databases.sql:/docker-entrypoint-initdb.d/01-init-databases.sql:ro
+    networks:
+      - internal_net
+    logging: *logging
+
+  redis:
+    image: redis:dev
+    restart: unless-stopped
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - internal_net
+      - public_net
+    logging: *logging
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.18
+    restart: unless-stopped
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - xpack.security.enabled=true
+      - xpack.security.transport.ssl.enabled=true
+      - xpack.security.transport.ssl.verification_mode=none
+      - xpack.security.transport.ssl.keystore.path=/usr/share/elasticsearch/config/certs/elk-keystore.p12
+      - xpack.security.transport.ssl.keystore.password=${ELK_KEYSTORE_PASSWORD:-elk-keystore-password}
+      - xpack.security.http.ssl.enabled=true
+      - xpack.security.http.ssl.verification_mode=none
+      - xpack.security.http.ssl.keystore.path=/usr/share/elasticsearch/config/certs/elk-keystore.p12
+      - xpack.security.http.ssl.keystore.password=${ELK_KEYSTORE_PASSWORD:-elk-keystore-password}
+      - cluster.routing.allocation.disk.threshold_enabled=false
+      - ELASTIC_PASSWORD=${ELK_PASSWORD:-change-me-elk}
+      - path.repo=/usr/share/elasticsearch/snapshots
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+      - elasticsearch_snapshots:/usr/share/elasticsearch/snapshots
+      - elk_certs:/usr/share/elasticsearch/config/certs:ro
+    networks:
+      - internal_net
+      - public_net
+    depends_on:
+      elk:
+        condition: service_started
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.17.18
+    restart: unless-stopped
+    depends_on:
+      elasticsearch:
+        condition: service_started
+      elk:
+        condition: service_started
+    ports:
+      - "127.0.0.1:5514:5514/udp"
+    volumes:
+      - ./infra/elk/logstash.conf:/usr/share/logstash/pipeline/logstash.conf:ro
+      - ./infra/elk/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
+      - elk_certs:/usr/share/logstash/config/certs:ro
+      - logstash_data:/usr/share/logstash/data
+    environment:
+      - ELK_USERNAME=${ELK_USERNAME}
+      - ELK_PASSWORD=${ELK_PASSWORD}
+    networks:
+      - internal_net
+      - public_net
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.17.18
+    restart: unless-stopped
+    depends_on:
+      elasticsearch:
+        condition: service_started
+      elk:
+        condition: service_started
+    volumes:
+      - ./infra/elk/kibana.yml:/usr/share/kibana/config/kibana.yml:ro
+      - elk_certs:/usr/share/kibana/config/certs:ro
+      - kibana_data:/usr/share/kibana/data
+    environment:
+      - ELASTICSEARCH_USERNAME=${ELK_USERNAME}
+      - ELASTICSEARCH_PASSWORD=${ELK_PASSWORD}
+    networks:
+      - internal_net
+      - public_net
+
+  elk:
+    build:
+      context: ./infra/elk
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      - ELK_USERNAME=${ELK_USERNAME}
+      - ELK_PASSWORD=${ELK_PASSWORD}
+      - ELK_KEYSTORE_PASSWORD=${ELK_KEYSTORE_PASSWORD}
+      - KIBANA_URL=https://kibana:5601
+      - CONFIG_FILE=/config.ndjson
+      - CERTS_DIR=/certs
+    volumes:
+      - elk_certs:/certs
+    networks:
+      - internal_net
+
+  # --- SERVICES ---
+  frontend:
+    image: frontend:dev
+    restart: unless-stopped
+    volumes:
+      - ./services/frontend:/app
+      - frontend_nm:/app/node_modules
+      - ./infra/nginx/certs:/app/certs:ro
+    networks:
+      - internal_net
+    logging: *logging
+
+  gateway:
+    image: gateway:dev
+    restart: unless-stopped
+    volumes:
+      - ./services/gateway:/app
+      - gateway_nm:/app/node_modules
+      - ./infra/nginx/certs:/app/certs:ro
+    networks:
+      - internal_net
+      - public_net
+    environment:
+      - PORT=${NESTJS_PORT}
+    logging: *logging
+
+  identity:
+    image: identity:dev
+    restart: unless-stopped
+    volumes:
+      - ./services/identity:/app
+      - identity_nm:/app/node_modules
+      - ./infra/nginx/certs:/app/certs:ro
+    networks:
+      - public_net
+      - internal_net
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/transcendence?schema=public
+      - JWT_SECRET=${JWT_ACCESS_SECRET}
+      - MAIL_HOST=${MAIL_HOST}
+      - MAIL_PORT=${MAIL_PORT}
+      - MAIL_USER=${MAIL_USER}
+      - MAIL_PASSWORD=${MAIL_PASSWORD}
+      - APP_URL=https://orel.page
+      - FRONTEND_URL=https://orel.page
+    logging: *logging
+
+  cosmos:
+    image: cosmos:dev
+    restart: unless-stopped
+    ports:
+      - "3002:3002"
+    volumes:
+      - ./services/cosmos:/app
+      - cosmos_nm:/app/node_modules
+      - ./infra/nginx/certs:/app/certs:ro
+    networks:
+      - internal_net
+      - public_net
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/cosmos_db?schema=public
+      - JWT_SECRET=${JWT_ACCESS_SECRET}
+    env_file:
+      - .env
+    logging: *logging
+
+  pythia:
+    image: pythia:dev
+    restart: unless-stopped
+    volumes:
+      - ./services/pythia:/app
+      - pythia_nm:/app/node_modules
+      - ./infra/nginx/certs:/app/certs:ro
+    networks:
+      - internal_net
+      - public_net
+    env_file:
+      - .env
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    logging: *logging
+
+  scribe:
+    image: scribe:dev
+    restart: unless-stopped
+    volumes:
+      - ./services/scribe:/app
+      - scribe_nm:/app/node_modules
+      - ./infra/nginx/certs:/app/certs:ro
+    networks:
+      - internal_net
+      - public_net
+    env_file:
+      - .env
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - PRIVATE_KEY=${SCRIBE_PRIVATE_KEY}
+      - FUJI_RPC_URL=${SCRIBE_FUJI_RPC_URL}
+      - CONTRACT_ADDRESS=${SCRIBE_CONTRACT_ADDRESS}
+      - PINATA_API_KEY=${SCRIBE_PINATA_API_KEY}
+      - PINATA_SECRET_API_KEY=${SCRIBE_PINATA_SECRET_API_KEY}
+    logging: *logging
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    networks:
+      - public_net
+    depends_on:
+      - nginx
+    environment:
+      - TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN}
+    command: tunnel --no-autoupdate run
+    profiles:
+      - cloudflare
+    logging: *logging
+
+networks:
+  public_net:
+    driver: bridge
+  internal_net:
+    driver: bridge
+    internal: true
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  elasticsearch_data:
+    driver: local
+  logstash_data:
+    driver: local
+  kibana_data:
+    driver: local
+  elasticsearch_snapshots:
+    driver: local
+  elk_certs:
+    driver: local
+  frontend_nm:
+  gateway_nm:
+  identity_nm:
+  cosmos_nm:
+  pythia_nm:
+  scribe_nm:

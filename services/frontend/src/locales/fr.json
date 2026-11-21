@@ -1,0 +1,270 @@
+{
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "or": "ou",
+    "back": "← Retour",
+    "failed": "Échec",
+    "save": "Enregistrer"
+  },
+  "auth": {
+    "login": "Connexion",
+    "logout": "Déconnexion",
+    "loginWith42": "Se connecter avec 42",
+    "register": "S'inscrire",
+    "username": "Nom d'utilisateur",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "processing": "Traitement en cours...",
+    "verifying": "Vérification...",
+    "alreadyHaveAccount": "Vous avez déjà un compte ? Connectez-vous",
+    "needAccount": "Besoin d'un compte ? S'inscrire",
+    "validation": {
+      "usernameTooShort": "Le nom d'utilisateur doit contenir au moins 6 caractères.",
+      "passwordWeak": "Le mot de passe ne répond pas à tous les critères de sécurité.",
+      "passwordsMismatch": "Les mots de passe ne correspondent pas.",
+      "required8Chars": "8+ caractères",
+      "password8Chars": "8+ caractères",
+      "requiredUppercase": "Majuscules (A-Z)",
+      "passwordUppercase": "Majuscules (A-Z)",
+      "requiredLowercase": "Minuscules (a-z)",
+      "passwordLowercase": "Minuscules (a-z)",
+      "requiredDigit": "Chiffre (0-9)",
+      "passwordDigit": "Chiffre (0-9)",
+      "requiredSpecialChar": "Caractère spécial (!@#…)",
+      "passwordSpecial": "Caractère spécial (!@#…)",
+      "username6Chars": "6+ caractères",
+      "passwordsMatch": "Les mots de passe correspondent"
+    },
+    "2fa": {
+      "title": "Authentification à deux facteurs",
+      "description": "Un code de vérification a été envoyé à votre e-mail. Veuillez l'entrer ci-dessous.",
+      "codePlaceholder": "Entrez le code à 6 chiffres",
+      "verifyCode": "Vérifier le code",
+      "backToLogin": "← Retour à la connexion"
+    },
+    "messages": {
+      "registerSuccess": "Inscription réussie ! Vérifiez vos emails puis connectez-vous.",
+      "error": "Une erreur est survenue",
+      "profileSaved": "Profil enregistré !",
+      "passwordUpdated": "Mot de passe mis à jour avec succès"
+    },
+    "errors": {
+      "imageTooLarge": "L'image doit peser moins de 500 Ko",
+      "failedToSave": "Échec de l'enregistrement",
+      "registrationFailed": "Échec de l'inscription",
+      "loginFailed": "Échec de la connexion",
+      "noTokenReceived": "Aucun jeton reçu",
+      "twoFaFailed": "Échec de la vérification 2FA",
+      "invalidCredentials": "Identifiants invalides",
+      "userNotFound": "Utilisateur non trouvé",
+      "emailAlreadyVerified": "Email déjà vérifié",
+      "emailVerifiedSuccessfully": "Email vérifié avec succès",
+      "userExists": "L'email ou le nom d'utilisateur existe déjà",
+      "invalidToken": "Jeton invalide",
+      "linkExpired": "Lien expiré",
+      "twoFaExpired": "Aucun code 2FA valide trouvé ou code expiré",
+      "invalidTwoFa": "Code 2FA invalide",
+      "usernameTaken": "Nom d'utilisateur déjà pris",
+      "currentPasswordIncorrect": "Le mot de passe actuel est incorrect"
+    },
+    "editProfile": "Modifier le profil",
+    "clickToChangeAvatar": "Cliquez pour changer d'avatar",
+    "displayName": "Nom d'affichage",
+    "optional": "Optionnel",
+    "saveProfile": "Enregistrer",
+    "saving": "Enregistrement...",
+    "changePassword": "Changer le mot de passe",
+    "currentPassword": "Mot de passe actuel",
+    "newPassword": "Nouveau mot de passe"
+  },
+  "dashboard": {
+    "status": "État",
+    "connected": "Connecté",
+    "disconnected": "Déconnecté",
+    "latency": "Latence",
+    "mode": "Mode",
+    "freeMode": "Exploration Libre",
+    "guidedMode": "Exploration Guidée",
+    "switchMode": "Changer de Mode",
+    "creative": "Mode Créatif",
+    "startTour": "Commencer la Visite",
+    "activity": "Activité",
+    "friends": "Amis",
+    "online": "en ligne",
+    "offline": "hors ligne",
+    "artworks": "Œuvres",
+    "memberSince": "Membre depuis",
+    "noFriends": "Aucun ami"
+  },
+  "connection": {
+    "loading": "Chargement...",
+    "synchronizing": "Synchronisation des données du Cosmos..."
+  },
+  "art": {
+    "notEnoughContent": "Remplissez au moins 10% du canevas avant de partager.",
+    "captureFailed": "Échec de la capture de l'œuvre",
+    "nameRequired": "Veuillez entrer un nom pour l'œuvre",
+    "brushSize": "px",
+    "namePlaceholder": "Nommez votre œuvre ici",
+    "reset": "RÉINITIALISER",
+    "resetTitle": "Réinitialiser le canevas",
+    "selectColor": "Sélectionner la couleur {color}",
+    "confirm": "Confirmer",
+    "share": "Partager"
+  },
+  "sanctuary": {
+    "title": "LE SANCTUAIRE",
+    "quote": "\"Ici, rien n'est évalué. Quelque chose est simplement laissé.\"",
+    "essence": {
+      "title": "L'essence",
+      "description1": "Transcendence n'est pas un jeu. C'est un espace numérique expérimental où les joueurs explorent le cosmos—un vaste réseau d'artefacts créatifs créés collectivement.",
+      "description2": "C'est un lieu d'expression sans évaluation. D'exploration sans compétition. De création sans jugement.\n\nC'est là que votre imagination prend forme."
+    },
+    "die": {
+      "title": "Le Dé",
+      "description": "Au cœur de Transcendence se trouve le Dé—un objet numérique 3D qui représente la possibilité, le hasard et le potentiel créatif.\n\nLe Dé évolue au fur et à mesure que vous interagissez avec lui. Chaque contribution artistique ajoute de nouvelles dimensions à son existence. Chaque exploration laisse une trace. Chaque création façonne son évolution.",
+      "philosophy": "Chaque choix ajoute une dimension. Chaque création résonne."
+    },
+    "states": {
+      "title": "Les trois états",
+      "dormant": {
+        "title": "Dormant — observation",
+        "description": "Dans son état dormant, le Dé attend. Vous observez. Vous explorez. Vous comprenez le cosmos sans laisser votre marque.\n\nC'est l'observation pure. La fondation de toute création."
+      },
+      "active": {
+        "title": "Actif — exploration",
+        "description": "L'état Actif est où l'exploration devient intentionnelle. Vous naviguez à travers les étoiles, découvrant des œuvres créées par d'autres.\n\nVous déverrouillez le potentiel du Dé par la participation. Chaque découverte est une clé. Chaque exploration est un voyage."
+      },
+      "creative": {
+        "title": "Créatif — co-création",
+        "description": "En mode Créatif, vous devenez un co-créateur. Vous peignez, vous imaginez, vous façonnez l'avenir du Dé.\n\nVotre œuvre devient partie du cosmos. Votre création influence les autres. Ensemble, nous construisons quelque chose de transcendant."
+      }
+    },
+    "stars": {
+      "title": "Les étoiles",
+      "description1": "Le cosmos est composé d'étoiles—chacune une œuvre unique. Chaque étoile a sa propre histoire, sa propre résonance.",
+      "description2": "Les étoiles peuvent être explorées, découvertes et collectées. Elles forment des constellations. Elles créent du sens par la connexion.",
+      "description3": "Vous êtes à la fois une étoile et une exploratrice. Vos créations brillent. Votre voyage illumine le chemin pour les autres."
+    },
+    "blockchain": {
+      "title": "Blockchain — mémoire durable",
+      "description": "Chaque œuvre que vous créez est enregistrée sur la blockchain—garantissant une mémoire permanente et une véritable propriété.",
+      "philosophy": "Vos créations vous appartiennent. Immuables. Permanentes. Au-delà de toute autorité centrale.\n\nTranscendence utilise la blockchain pour garantir la permanence de la création collective."
+    },
+    "whatNotIs": {
+      "title": "Ce que ce n'est pas",
+      "notGame": "Ce n'est pas un jeu",
+      "notSocialNetwork": "Ce n'est pas un réseau social",
+      "notGallery": "Ce n'est pas une galerie compétitive",
+      "notDemo": "Ce n'est pas une démonstration technologique",
+      "place": "C'est un lieu."
+    },
+    "legalNav": "JURIDIQUE",
+    "aboutNav": "À PROPOS",
+    "transcendenceTitle": "TRANSCENDENCE"
+  },
+  "legal": {
+    "title": "Conditions générales",
+    "terms": {
+      "title": "Conditions de service",
+      "acceptance": {
+        "title": "1. Acceptation des conditions",
+        "description": "En accédant et en utilisant Transcendence, vous acceptez et êtes lié par les termes de cet accord."
+      },
+      "nature": {
+        "title": "2. Nature du service",
+        "description": "Transcendence est un espace numérique expérimental pour l'exploration et l'expression créative. Le service est fourni tel quel sans garanties."
+      },
+      "creation": {
+        "title": "3. Responsabilités de l'utilisateur",
+        "description": "Les utilisateurs acceptent de ne pas créer, télécharger ou partager de contenu illégal, nuisible, haineux ou qui viole les droits d'autrui."
+      },
+      "blockchain": {
+        "title": "4. Persistance blockchain",
+        "description": "Tous les travaux artistiques sont stockés de manière permanente sur la blockchain. Cela garantit que vos créations ne peuvent pas être censurées ou supprimées."
+      },
+      "irreversibility": {
+        "title": "5. Irréversibilité",
+        "description": "Les transactions blockchain sont permanentes et irréversibles. Les utilisateurs doivent comprendre les implications avant de créer."
+      },
+      "account": {
+        "title": "6. Responsabilité du compte",
+        "description": "Vous êtes responsable de la confidentialité de vos identifiants de compte. Vous êtes responsable de toutes les activités sous votre compte."
+      },
+      "behavior": {
+        "title": "7. Conduite utilisateur",
+        "description": "Les utilisateurs doivent se comporter avec respect. Le harcèlement, les abus ou les violations des droits d'autrui peuvent entraîner la suspension du compte."
+      }
+    },
+    "privacy": {
+      "title": "Politique de confidentialité",
+      "dataCollected": {
+        "title": "1. Données collectées",
+        "description": "Nous collectons des données minimales : nom d'utilisateur, e-mail et métadonnées d'œuvres d'art nécessaires au fonctionnement du service."
+      },
+      "dataUse": {
+        "title": "2. Utilisation des données",
+        "description": "Vos données sont utilisées uniquement pour fournir le service, améliorer les fonctionnalités et maintenir la sécurité."
+      },
+      "ai": {
+        "title": "3. Traitement par IA",
+        "description": "Certaines fonctionnalités utilisent l'IA pour améliorer votre expérience. L'IA traite vos données d'entrée mais ne les stocke pas à des fins d'entraînement."
+      },
+      "security": {
+        "title": "4. Sécurité",
+        "description": "Nous mettons en œuvre des mesures de sécurité de niveau industriel pour protéger vos données. Cependant, aucun système n'est complètement sécurisé."
+      }
+    },
+    "cookies": {
+      "title": "Politique relative aux cookies",
+      "description1": "Transcendence utilise des cookies pour améliorer l'expérience utilisateur et maintenir les informations de session.",
+      "description2": "Vous pouvez contrôler les préférences des cookies via les paramètres de votre navigateur."
+    },
+    "ip": {
+      "title": "Propriété intellectuelle",
+      "description": "Tout contenu créé sur Transcendence est la propriété du créateur. En téléchargeant le contenu, vous accordez à Transcendence une licence pour afficher et préserver votre travail."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Pour toute question ou préoccupation, veuillez nous contacter à",
+      "email": "contact@transcendence.42"
+    },
+    "lastUpdated": "Dernière mise à jour : Avril 2026"
+  },
+  "friends": {
+    "inviteWithCode": "Inviter un ami avec code",
+    "generateInviteCode": "Générer invite",
+    "yourCode": "Votre code (copier)",
+    "orAddFriend": "AJOUT AMI",
+    "enterCode": "Entrer code",
+    "addFriend": "Ajouter ami",
+    "friendshipAccepted": "Amitié acceptée!",
+    "codeGenerated": "Code généré & copié!",
+    "codeCopied": "Code copié!",
+    "friendAdded": "Ami ajouté avec succès",
+    "friendRemoved": "Ami supprimé avec succès",
+    "errors": {
+      "inviteNotFound": "Invitation introuvable",
+      "inviteUsed": "L'invitation a déjà été utilisée",
+      "inviteExpired": "L'invitation a expiré",
+      "cannotAcceptOwn": "Vous ne pouvez pas accepter votre propre invitation",
+      "userNotFound": "Votre compte utilisateur est introuvable",
+      "senderNotFound": "L'expéditeur de l'invitation n'existe plus",
+      "alreadyFriends": "Vous êtes déjà amis avec cet utilisateur",
+      "notFriends": "Vous n'êtes pas ami avec cet utilisateur",
+      "friendUserNotFound": "Utilisateur introuvable"
+    }
+  },
+  "calendar": {
+    "weekdays": ["L", "M", "M", "J", "V", "S", "D"]
+  },
+  "language": {
+    "en": "EN",
+    "fr": "FR",
+    "de": "DE",
+    "selectLanguage": "Langue"
+  }
+}
